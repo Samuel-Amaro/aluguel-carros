@@ -3,6 +3,8 @@ import styles from "./page.module.css";
 import Header from "@/components/Header";
 import Ads from "@/components/Ads";
 import SearchBar from "@/components/SearchBar";
+import CustomFilter from "@/components/CustomFilter";
+import { fuels, yearsOfProduction } from "@/utils";
 
 export default function Home() {
   return (
@@ -38,7 +40,13 @@ export default function Home() {
       </div>
       <h2>Catálogo de carros</h2>
       <p>Explore os carros que você pode gostar</p>
-      <SearchBar />
+      <div>
+        <SearchBar />
+        <div>
+          <CustomFilter options={yearsOfProduction} title="Year" />
+          <CustomFilter options={fuels} title="Fuel" />
+        </div>
+      </div>
     </div>
   );
 }

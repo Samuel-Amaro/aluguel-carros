@@ -5,8 +5,26 @@ import Ads from "@/components/Ads";
 import SearchBar from "@/components/SearchBar";
 import CustomFilter from "@/components/CustomFilter";
 import { fuels, yearsOfProduction } from "@/utils";
+import { Filters } from "@/types";
+import { fetchCars } from "@/api/cars";
+import Card from "@/components/Card";
+import { Suspense } from "react";
 
-export default function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Filters;
+}) {
+  const datas = await fetchCars({
+    manufacturer: searchParams.manufacturer || "",
+    model: searchParams.model || "",
+    year: searchParams.year || 2022,
+    limit: searchParams.limit || 10,
+    fuel: searchParams.fuel || "",
+  });
+
+  const isDataEmpty = !Array.isArray(datas) || datas.length < 1 || !datas;
+
   return (
     <div>
       <Header title="Aluguel De Carros" />
@@ -47,6 +65,22 @@ export default function Home() {
           <CustomFilter options={fuels} title="Fuel" />
         </div>
       </div>
+      {!isDataEmpty ? (
+        <section>
+          <Suspense fallback={<div>Carregando catalogo carros</div>}>
+            <ul>
+              {datas?.map((car, index) => (
+                <li key={index}>{<Card datas={car} />}</li>
+              ))}
+            </ul>
+          </Suspense>
+        </section>
+      ) : (
+        <div>
+          <h2>Ops, sem resultados</h2>
+          <p>{datas?.message}</p>
+        </div>
+      )}
     </div>
   );
 }

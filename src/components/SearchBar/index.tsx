@@ -30,15 +30,15 @@ export default function SearchBar() {
     const searchParams = new URLSearchParams(window.location.search);
 
     if (model) {
-      searchParams.set("modelo", model);
+      searchParams.set("model", model);
     } else {
-      searchParams.delete("modelo");
+      searchParams.delete("model");
     }
 
     if (manufacturer) {
-      searchParams.set("fabricante", manufacturer);
+      searchParams.set("manufacturer", manufacturer);
     } else {
-      searchParams.delete("fabricante");
+      searchParams.delete("manufacturer");
     }
 
     const newPathName = `${

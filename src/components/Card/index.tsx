@@ -57,6 +57,9 @@ export default function Card({ datas }: { datas: Cars }) {
           <p>{datas.city_mpg} MPG</p>
         </div>
       </div>
+      <button type="button" title="Visualizar" aria-label="Visualizar">
+        Visualizar
+      </button>
     </div>
   );
 }

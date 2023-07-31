@@ -11,6 +11,7 @@ import Card from "@/components/Card";
 import { Suspense } from "react";
 import SkeletonCatalogueCar from "@/components/Skeletons/SkeletonCatalogueCar";
 import ShowMore from "@/components/ShowMore";
+import Footer from "@/components/Footer";
 
 export default async function Home({
   searchParams,
@@ -28,8 +29,7 @@ export default async function Home({
   const isDataEmpty = !Array.isArray(datas) || datas.length < 1 || !datas;
 
   return (
-    <div>
-      <Header title="Aluguel De Carros" />
+    <main>
       <div>
         <Ads
           title="A Melhor Plataforma para Aluguel de Carros"
@@ -69,12 +69,6 @@ export default async function Home({
       </div>
       {!isDataEmpty ? (
         <section>
-          {/*
-            //TODO: CRIAR SKELETON LOADER CARS, criar shimmer imagens de cars
-            //TODO: ADD BUTTONS LOADER PARA CARREGAR MAIS IMAGENS 
-            //TODO: IMPLEMENTAR MODAL CARS
-            //TODO: ADD ICONS NAS DATAS DO CARD
-          */}
           <Suspense
             fallback={<SkeletonCatalogueCar limit={searchParams.limit || 10} />}
           >
@@ -95,6 +89,6 @@ export default async function Home({
           <p>{datas?.message}</p>
         </div>
       )}
-    </div>
+    </main>
   );
 }

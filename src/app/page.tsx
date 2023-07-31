@@ -9,6 +9,8 @@ import { Filters } from "@/types";
 import { fetchCars } from "@/api/cars";
 import Card from "@/components/Card";
 import { Suspense } from "react";
+import SkeletonCatalogueCar from "@/components/Skeletons/SkeletonCatalogueCar";
+import ShowMore from "@/components/ShowMore";
 
 export default async function Home({
   searchParams,
@@ -67,13 +69,25 @@ export default async function Home({
       </div>
       {!isDataEmpty ? (
         <section>
-          <Suspense fallback={<div>Carregando catalogo carros</div>}>
+          {/*
+            //TODO: CRIAR SKELETON LOADER CARS, criar shimmer imagens de cars
+            //TODO: ADD BUTTONS LOADER PARA CARREGAR MAIS IMAGENS 
+            //TODO: IMPLEMENTAR MODAL CARS
+            //TODO: ADD ICONS NAS DATAS DO CARD
+          */}
+          <Suspense
+            fallback={<SkeletonCatalogueCar limit={searchParams.limit || 10} />}
+          >
             <ul>
               {datas?.map((car, index) => (
                 <li key={index}>{<Card datas={car} />}</li>
               ))}
             </ul>
           </Suspense>
+          <ShowMore
+            pageNumber={(searchParams.limit || 10) / 10}
+            isNext={(searchParams.limit || 10) > datas.length}
+          />
         </section>
       ) : (
         <div>

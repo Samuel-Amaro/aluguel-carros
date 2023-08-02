@@ -1,11 +1,19 @@
 import Image from "next/image";
+import styles from "./styles.module.css";
 
-Image;
 export default function Header({ title }: { title: string }) {
   return (
-    <header>
-      <Image src="/assets/logo.svg" alt="logo" width={25} height={25} />
-      <h1>{title}</h1>
+    <header className={styles.header}>
+      <div className={styles.headerWrapper}>
+        <Image
+          src="/assets/logo.svg"
+          alt="logo"
+          width={25}
+          height={25}
+          className={styles.headerLogo}
+        />
+        <h1 className={styles.headerTitle}>{title}</h1>
+      </div>
     </header>
   );
 }

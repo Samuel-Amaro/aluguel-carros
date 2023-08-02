@@ -1,3 +1,5 @@
+import styles from "./styles.module.css";
+
 export default function Ads({
   title,
   description,
@@ -10,10 +12,10 @@ export default function Ads({
   children: React.ReactNode;
 }) {
   return (
-    <div>
-      <h2>{title}</h2>
-      <p>{description}</p>
-      <span>{tag}</span>
+    <div className={styles.ads}>
+      <h2 className={styles.adsTitle}>{title}</h2>
+      <p className={styles.adsDescription}>{description}</p>
+      <span className={styles.adsTag}>{tag}</span>
       {children}
     </div>
   );

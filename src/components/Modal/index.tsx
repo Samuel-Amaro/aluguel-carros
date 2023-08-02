@@ -7,6 +7,14 @@ import { useEffect, useRef, useState } from "react";
 
 const MULTIPLYING_FACTOR_MILES = 1.609;
 
+function getDrive(type: string) {
+  if (type === "fwd") return "Tração dianteira";
+  else if (type === "rwd") return "Tração Traseira";
+  else if (type === "awd") return "Tração nas quatro rodas";
+  else if (type === "4wd") return "Tração nas quatro rodas";
+  else return "";
+}
+
 export default function Modal({
   datas,
   isOpen,
@@ -24,6 +32,7 @@ export default function Modal({
       width={300}
       height={100}
       key={`image-0`}
+      title="Visualizar Image do carro com angulo normal"
     />,
     <Image
       src={generateCarImageUrl(datas, "29")}
@@ -32,6 +41,7 @@ export default function Modal({
       width={300}
       height={100}
       key={`image-1`}
+      title="Visualizar Imagen do carro com angulo de 29 graus"
     />,
     <Image
       src={generateCarImageUrl(datas, "33")}
@@ -40,6 +50,7 @@ export default function Modal({
       width={300}
       height={100}
       key={`image-2`}
+      title="Visualizar Imagen do carro com angulo de 33 graus"
     />,
     <Image
       src={generateCarImageUrl(datas, "13")}
@@ -48,6 +59,7 @@ export default function Modal({
       width={300}
       height={100}
       key={`image-3`}
+      title="Visualizar Imagen do carro com angulo de 13 graus"
     />,
   ];
 
@@ -91,7 +103,9 @@ export default function Modal({
         />
       </button>
       <div>
-        <div>{imageSelectedToView}</div>
+        <div aria-live="polite" aria-atomic="true">
+          {imageSelectedToView}
+        </div>
         <div>
           {imagesLightbox.map((image, index) => (
             <div
@@ -128,7 +142,7 @@ export default function Modal({
               Deslocamento
             </p>
             <p role="columnheader" aria-sort="none">
-              Transmissão de direção
+              Transmissão de acionamento
             </p>
             <p role="columnheader" aria-sort="none">
               Tipo de combustível
@@ -161,7 +175,7 @@ export default function Modal({
             </p>
             <p role="cell">{datas.cylinders}</p>
             <p role="cell">{datas.displacement}</p>
-            <p role="cell">{datas.drive}</p>
+            <p role="cell">{getDrive(datas.drive)}</p>
             <p role="cell">{datas.fuel_type}</p>
             <p role="cell">
               {(MULTIPLYING_FACTOR_MILES * datas.highway_mpg).toFixed(2)}{" "}

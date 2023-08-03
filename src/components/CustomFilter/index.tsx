@@ -3,6 +3,7 @@
 import { updateSearchParams } from "@/utils";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
+import styles from "./styles.module.css";
 
 export default function CustomFilter({
   options,
@@ -38,6 +39,7 @@ export default function CustomFilter({
         setOptionSelected(e.target.value);
         handleSearchParams(title, e.target.value);
       }}
+      className={styles.customFilter}
     >
       <option value="">--{title}--</option>
       {options.map((option, index) => (

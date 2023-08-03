@@ -1,5 +1,7 @@
 import { Cars } from "@/types";
 
+export const MULTIPLYING_FACTOR_MILES = 1.609;
+
 export const manufacturers = [
   "Acura",
   "Alfa Romeo",

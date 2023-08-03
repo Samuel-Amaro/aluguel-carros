@@ -1,0 +1,17 @@
+.customFilter {
+    display: block;
+    box-sizing: border-box;
+    font-family: inherit;
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 4px;
+    padding: 10px;
+    color: var(--color02);
+    background-color: white;
+    width: 100%;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 4px 6px -1px rgba(0, 0, 0, .1),
+        0 2px 4px -2px rgba(0, 0, 0, .1);
+    max-width: 130px;
+}

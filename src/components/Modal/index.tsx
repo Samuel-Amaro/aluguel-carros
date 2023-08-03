@@ -4,8 +4,8 @@ import { Cars } from "@/types";
 import { generateCarImageUrl } from "@/utils";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { MULTIPLYING_FACTOR_MILES } from "@/utils";
 
-const MULTIPLYING_FACTOR_MILES = 1.609;
 
 function getDrive(type: string) {
   if (type === "fwd") return "Tração dianteira";

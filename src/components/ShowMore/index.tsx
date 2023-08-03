@@ -2,6 +2,7 @@
 
 import { updateSearchParams } from "@/utils";
 import { useRouter } from "next/navigation";
+import styles from "./styles.module.css";
 
 export default function ShowMore({
   pageNumber,
@@ -32,6 +33,7 @@ export default function ShowMore({
             handleNavigation();
           }
         }}
+        className={styles.button}
       >
         Mostrar Mais
       </button>

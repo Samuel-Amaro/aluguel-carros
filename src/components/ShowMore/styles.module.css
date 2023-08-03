@@ -1,0 +1,23 @@
+.button {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    appearance: none;
+    font-family: inherit;
+    box-sizing: border-box;
+    width: auto;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.24px;
+    color: white;
+    border-radius: 4px;
+    background-color: var(--color05);
+    height: 36px;
+    text-align: center;
+    padding: 0 20px;
+    cursor: pointer;
+    margin: 0 auto;
+}

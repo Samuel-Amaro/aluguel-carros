@@ -13,6 +13,7 @@
     display: flex;
     flex-flow: column nowrap;
     gap: 32px;
+    margin: 0 0 32px 0;
 }
 
 .ads1,
@@ -69,4 +70,49 @@
 
 .ads2Tag {
     background-color: var(--color04);
+}
+
+.mainTitle {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28.8px;
+    color: var(--color02);
+    text-align: left;
+    margin: 0 0 5px 0;
+}
+
+.mainDescription {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.32px;
+    color: var(--color02);
+    text-align: left;
+    margin: 0 0 32px 0;
+}
+
+.mainContainerCustomFilters {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 15px 0 0 0;
+}
+
+.mainSearch{
+    margin: 0 0 24px 0;
+}
+
+.mainList {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+.mainListItem {
+    flex: 0 0 100%;
+    max-width: 310px;
 }

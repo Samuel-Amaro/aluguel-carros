@@ -4,6 +4,7 @@ import { manufacturers } from "@/utils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
+import styles from "./styles.module.css";
 
 export default function SearchBar() {
   const [datasForm, setDatasForm] = useState<{
@@ -49,14 +50,15 @@ export default function SearchBar() {
   }
 
   return (
-    <form onSubmit={handleSubmitForm}>
-      <div>
-        <div>
+    <form onSubmit={handleSubmitForm} className={styles.form}>
+      <div className={styles.formContainer}>
+        <div className={styles.formGroup}>
           <Image
             src="/assets/car-logo.svg"
             alt="Logo Car"
             width={32}
             height={32}
+            className={styles.formIcon}
           />
           <select
             title="Escolha uma fabricante"
@@ -65,6 +67,7 @@ export default function SearchBar() {
             onChange={(e) => {
               setDatasForm({ ...datasForm, manufacturer: e.target.value });
             }}
+            className={styles.formSelect}
           >
             <option value="">--Escolha Fabricante--</option>
             {manufacturers.map((manufacturer, index) => (
@@ -74,12 +77,13 @@ export default function SearchBar() {
             ))}
           </select>
         </div>
-        <div>
+        <div className={styles.formGroup}>
           <Image
             src="/assets/model-icon.png"
             alt="Icon Model Car"
             width={32}
             height={32}
+            className={styles.formIcon}
           />
           <input
             type="text"
@@ -90,6 +94,7 @@ export default function SearchBar() {
             onChange={(e) => {
               setDatasForm({ ...datasForm, model: e.target.value });
             }}
+            className={styles.formInput}
           />
         </div>
       </div>
@@ -97,12 +102,14 @@ export default function SearchBar() {
         type="submit"
         title="Filtrar Catalogo"
         aria-label="Filtrar Catalogo"
+        className={styles.formButton}
       >
         <Image
           src="/assets/magnifying-glass.svg"
           alt="Icon pesquisar"
           width={32}
           height={32}
+          className={styles.formIconButton}
         />
       </button>
     </form>

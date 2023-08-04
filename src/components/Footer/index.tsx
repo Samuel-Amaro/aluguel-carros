@@ -1,56 +1,64 @@
 import Image from "next/image";
+import styles from "./styles.module.css";
 
 export default function Footer() {
   return (
-    <footer>
-      <div>
-        <header>
-          <div>
-            <Image src="/assets/logo.svg" alt="logo" width={25} height={25} />
-            <h2>Aluguel de Carros</h2>
+    <footer className={styles.footer}>
+      <div className={styles.footerContainer}>
+        <div className={styles.footerContainerHeader}>
+          <div className={styles.footerContainerLogo}>
+            <Image
+              src="/assets/logo.svg"
+              alt="logo"
+              width={25}
+              height={25}
+              className={styles.footerLogo}
+            />
+            <h2 className={styles.footerTitle}>Aluguel de Carros</h2>
           </div>
-
-          <p>
+          <p className={styles.footerDescription}>
             Nossa visão é proporcionar comodidade e ajudar a aumentar o seu
             negócio de vendas.
           </p>
-        </header>
-        <div>
+        </div>
+        <div className={styles.containerBody}>
           <section>
-            <h3>Sobre</h3>
-            <ul>
-              <li>Como Funciona</li>
-              <li>Apresentação</li>
-              <li>Parceria</li>
-              <li>Relação de Trabalho</li>
+            <h3 className={styles.footerTitleLinks}>Sobre</h3>
+            <ul className={styles.footerList}>
+              <li className={styles.footerListItem}>Como Funciona</li>
+              <li className={styles.footerListItem}>Apresentação</li>
+              <li className={styles.footerListItem}>Parceria</li>
+              <li className={styles.footerListItem}>Relação de Trabalho</li>
             </ul>
           </section>
           <section>
-            <h3>Comunidade</h3>
-            <ul>
-              <li>Eventos</li>
-              <li>Blog</li>
-              <li>Podcast</li>
-              <li>Convidar um amigo</li>
+            <h3 className={styles.footerTitleLinks}>Comunidade</h3>
+            <ul className={styles.footerList}>
+              <li className={styles.footerListItem}>Eventos</li>
+              <li className={styles.footerListItem}>Blog</li>
+              <li className={styles.footerListItem}>Podcast</li>
+              <li className={styles.footerListItem}>Convidar um amigo</li>
             </ul>
           </section>
           <section>
-            <h3>Redes Sociais</h3>
-            <ul>
-              <li>Discord</li>
-              <li>Instagram</li>
-              <li>Twitter</li>
-              <li>Facebook</li>
+            <h3 className={styles.footerTitleLinks}>Redes Sociais</h3>
+            <ul className={styles.footerList}>
+              <li className={styles.footerListItem}>Discord</li>
+              <li className={styles.footerListItem}>Instagram</li>
+              <li className={styles.footerListItem}>Twitter</li>
+              <li className={styles.footerListItem}>Facebook</li>
             </ul>
           </section>
         </div>
       </div>
-      <hr />
+      <hr className={styles.footerLineDiviser} />
       <div>
-        <p>©2023 Aluguel Carros. Todos os direitos reservados</p>
-        <div>
-          <p>Política de Privacidade</p>
-          <p>Termos e Condições</p>
+        <p className={`${styles.footerText} ${styles.footerTextMargin}`}>
+          ©2023 Aluguel Carros. Todos os direitos reservados
+        </p>
+        <div className={styles.footerContainerText}>
+          <p className={styles.footerText}>Política de Privacidade</p>
+          <p className={styles.footerText}>Termos e Condições</p>
         </div>
       </div>
     </footer>

@@ -1,0 +1,94 @@
+.modal {
+    border: none;
+    display: block;
+    max-width: 512px;
+    padding: 24px;
+    height: min-content;
+    min-height: auto;
+    margin: auto 16px auto 16px;
+    width: calc(100% - 32px);
+    background-color: white;
+    border-radius: 10px 0 0 10px;
+}
+
+.modalImage {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    position: static;
+    margin: 0 auto;
+    width: auto;
+    /*object-fit: contain;
+    object-position: center center;*/
+}
+
+.modalWrapperImage {
+    /*position: relative;*/
+    /*min-height: 80px;*/
+    height: auto;
+    background-color: var(--color07);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.modalAreaViewImage {
+    background-color: var(--color05);
+    /*position: relative;*/
+    /*min-height: 200px;*/
+    border-radius: 10px;
+    height: auto;
+    margin: 0 0 15px 0;
+}
+
+.modalContainerImages {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.modalLightbox {
+    margin: 0 0 24px 0;
+}
+
+.modalTitle {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -0.72px;
+    color: var(--color02);
+    margin: 0 0 24px 0;
+}
+
+.modalTableHeader,
+.modalTableCell {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.24px;
+    color: var(--color08);
+    text-align: left;
+}
+
+.modalTableCell{
+    text-align: right;
+}
+
+.modalTableCell {
+    font-weight: 600;
+    color: var(--color2);
+}
+
+.modalTableContainerRow{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.modalTableContainerRow:not(:last-child) {
+    margin: 0 0 12px 0;
+}

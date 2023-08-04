@@ -4,7 +4,7 @@
     margin: 0;
 }
 
-:root{
+:root {
     --color01: #F6F7F9;
     --color02: #1A202C;
     --color03: rgba(195, 212, 233, 0.40);
@@ -12,8 +12,13 @@
     --color05: #3563E9;
     --color06: #90A3BF;
     --color07: #EFF3FD;
+    --color08: #6b7280;
 }
 
-body{
+body {
     background-color: var(--color01);
+}
+
+.has-dialog{
+    overflow-y: hidden;
 }

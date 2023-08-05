@@ -1,7 +1,7 @@
 "use client";
 
 import { Cars } from "@/types";
-import { generateCarImageUrl } from "@/utils";
+import { generateCarImageUrl, shimer, toBase64 } from "@/utils";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { MULTIPLYING_FACTOR_MILES } from "@/utils";
@@ -25,50 +25,10 @@ export default function Modal({
   onClose: () => void;
 }) {
   const imagesLightbox = [
-    <Image
-      src={generateCarImageUrl(datas)}
-      alt="imagem do carro normal"
-      /*fill*/
-      priority
-      width={300}
-      height={100}
-      key={`image-0`}
-      title="Visualizar Image do carro com angulo normal"
-      className={styles.modalImage}
-    />,
-    <Image
-      src={generateCarImageUrl(datas, "29")}
-      alt="imagem do carro com angulo de 29 graus"
-      /*fill*/
-      priority
-      width={300}
-      height={100}
-      key={`image-1`}
-      title="Visualizar Imagen do carro com angulo de 29 graus"
-      className={styles.modalImage}
-    />,
-    <Image
-      src={generateCarImageUrl(datas, "33")}
-      alt="imagem do carro com angulo de 33 graus"
-      /*fill*/
-      priority
-      width={300}
-      height={100}
-      key={`image-2`}
-      title="Visualizar Imagen do carro com angulo de 33 graus"
-      className={styles.modalImage}
-    />,
-    <Image
-      src={generateCarImageUrl(datas, "13")}
-      alt="imagem do carro com angulo de 13 graus"
-      /*fill*/
-      priority
-      width={300}
-      height={100}
-      key={`image-3`}
-      title="Visualizar Imagen do carro com angulo de 13 graus"
-      className={styles.modalImage}
-    />,
+    generateCarImageUrl(datas),
+    generateCarImageUrl(datas, "29"),
+    generateCarImageUrl(datas, "33"),
+    generateCarImageUrl(datas, "13"),
   ];
 
   const refDialog = useRef<HTMLDialogElement | null>(null);
@@ -106,12 +66,14 @@ export default function Modal({
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === "") handleClose();
         }}
+        className={styles.btnClose}
       >
         <Image
           src="/assets/close.svg"
           alt="icone fechar botão"
           width={24}
           height={24}
+          className={styles.btnCloseIcon}
         />
       </button>
       <div className={styles.modalLightbox}>
@@ -120,7 +82,18 @@ export default function Modal({
           aria-atomic="true"
           className={styles.modalAreaViewImage}
         >
-          {imageSelectedToView}
+          <Image
+            src={imageSelectedToView}
+            alt="Imagem carro"
+            priority
+            width={300}
+            height={100}
+            placeholder="blur"
+            blurDataURL={`data:image/svg+xml;base64,${toBase64(
+              shimer(300, 100)
+            )}`}
+            className={styles.modalImage}
+          />
         </div>
         <div className={styles.modalContainerImages}>
           {imagesLightbox.map((image, index) => (
@@ -134,7 +107,18 @@ export default function Modal({
               }}
               className={styles.modalWrapperImage}
             >
-              {image}
+              <Image
+                src={imagesLightbox[index]}
+                alt="Imagem carro"
+                priority
+                width={300}
+                height={100}
+                placeholder="blur"
+                blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                  shimer(300, 100)
+                )}`}
+                className={styles.modalImage}
+              />
             </div>
           ))}
         </div>

@@ -11,7 +11,8 @@ import Card from "@/components/Card";
 import { Suspense } from "react";
 import SkeletonCatalogueCar from "@/components/Skeletons/SkeletonCatalogueCar";
 import ShowMore from "@/components/ShowMore";
-import Footer from "@/components/Footer";
+
+//TODO: ESTILIZAR LOADERS, SKELETONS, IMAGENS MODAL,
 
 export default async function Home({
   searchParams,
@@ -27,7 +28,6 @@ export default async function Home({
   });
 
   const isDataEmpty = !Array.isArray(datas) || datas.length < 1 || !datas;
-  
 
   return (
     <main className={styles.main}>
@@ -68,7 +68,9 @@ export default async function Home({
         </div>
       </div>
       <h2 className={styles.mainTitle}>Catálogo de carros</h2>
-      <p className={styles.mainDescription}>Explore os carros que você pode gostar</p>
+      <p className={styles.mainDescription}>
+        Explore os carros que você pode gostar
+      </p>
       <div className={styles.mainSearch}>
         <SearchBar />
         <div className={styles.mainContainerCustomFilters}>
@@ -83,14 +85,19 @@ export default async function Home({
           >
             <ul className={styles.mainList}>
               {datas?.map((car, index) => (
-                <li key={index} className={styles.mainListItem}>{<Card datas={car} />}</li>
+                <li key={index} className={styles.mainListItem}>
+                  {<Card datas={car} />}
+                </li>
               ))}
             </ul>
           </Suspense>
-          <ShowMore
-            pageNumber={(searchParams.limit || 10) / 10}
-            isNext={(searchParams.limit || 10) > datas.length}
-          />
+          <div className={styles.mainContainerLoader}>
+            <ShowMore
+              pageNumber={(searchParams.limit || 10) / 10}
+              isNext={(searchParams.limit || 10) > datas.length}
+            />
+            <p className={styles.mainCount}>{datas.length} Carros</p>
+          </div>
         </section>
       ) : (
         <div>

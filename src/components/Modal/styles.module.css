@@ -72,7 +72,7 @@
     text-align: left;
 }
 
-.modalTableCell{
+.modalTableCell {
     text-align: right;
 }
 
@@ -81,7 +81,7 @@
     color: var(--color2);
 }
 
-.modalTableContainerRow{
+.modalTableContainerRow {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -91,4 +91,27 @@
 
 .modalTableContainerRow:not(:last-child) {
     margin: 0 0 12px 0;
+}
+
+.btnClose {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    box-sizing: border-box;
+    width: 36px;
+    height: 36px;
+    background-color: var(--color07);
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.btnCloseIcon {
+    display: block;
+    max-width: 100%;
+    height: 100%;
 }

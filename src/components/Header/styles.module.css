@@ -25,3 +25,17 @@
     flex-flow: row wrap;
     gap: 10px;
 }
+
+@media screen and (min-width: 640px) {
+    .header {
+        padding: 40px 40px 40px 60px;
+    }
+
+    .headerTitle {
+        font-size: 32px;
+        line-height: 48px;
+        margin: 0;
+        padding: 0;
+        letter-spacing: -0.96px;
+    }
+}

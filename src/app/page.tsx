@@ -1,7 +1,5 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import Header from "@/components/Header";
-import Ads from "@/components/Ads";
 import SearchBar from "@/components/SearchBar";
 import CustomFilter from "@/components/CustomFilter";
 import { fuels, yearsOfProduction } from "@/utils";
@@ -11,8 +9,6 @@ import Card from "@/components/Card";
 import { Suspense } from "react";
 import SkeletonCatalogueCar from "@/components/Skeletons/SkeletonCatalogueCar";
 import ShowMore from "@/components/ShowMore";
-
-//TODO: ESTILIZAR LOADERS, SKELETONS, IMAGENS MODAL,
 
 export default async function Home({
   searchParams,

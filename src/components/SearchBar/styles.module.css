@@ -61,3 +61,33 @@
 .formContainer {
     margin: 0 0 15px 0;
 }
+
+@media screen and (min-width: 640px) {
+    .formContainer {
+        margin: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        flex: 1 1 auto;
+    }
+
+    .formGroup:not(:last-child) {
+        margin: 0;
+    }
+
+    .formGroup {
+        flex: 1 1 0;
+    }
+
+    .form {
+        padding: 0;
+        max-width: 768px;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        gap: 20px;
+        flex: 1 1 auto;
+    }
+}

@@ -1,0 +1,55 @@
+.skeletonCard {
+    background-color: white;
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.skeletonCardTitle {
+    content: "";
+    height: 24px;
+    width: 116px;
+    background-color: var(--color09);
+    border-radius: 15px;
+    margin: 0 0 12px;
+}
+
+.skeletonCardPrice {
+    content: "";
+    height: 21px;
+    width: 116px;
+    background-color: var(--color07);
+    border-radius: 15px;
+    margin: 0 0 37px;
+}
+
+.skeletonCardImage {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto 37px auto;
+}
+
+.skeletonCardData {
+    content: "";
+    display: block;
+    flex: 0 0 56px;
+    height: 16px;
+    background-color: var(--color07);
+    border-radius: 15px;
+}
+
+.skeletonCardContainerDatas {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 32px 0;
+}
+
+.skeletonCardButton {
+    display: block;
+    content: "";
+    background-color: var(--color05);
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+}

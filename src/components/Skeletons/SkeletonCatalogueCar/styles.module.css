@@ -1,0 +1,13 @@
+.list {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 24px;
+    justify-content: center;
+    margin: 0 0 32px 0;
+}
+
+.listItem {
+    flex: 0 0 100%;
+    max-width: 310px;
+}

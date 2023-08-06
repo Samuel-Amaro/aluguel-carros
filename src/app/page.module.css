@@ -132,3 +132,74 @@
     align-items: center;
     justify-content: space-between;
 }
+
+@media screen and (min-width: 640px) {
+    .main {
+        margin: 32px 64px 64px 64px;
+    }
+
+    .ads1,
+    .ads2 {
+        padding: 24px;
+        /*flex: 0 0 100%;*/
+        max-width: none;
+        min-height: 100%;
+    }
+
+    .ads1Title,
+    .ads2Title {
+        font-size: 32px;
+        line-height: 48px;
+        letter-spacing: -0.96px;
+        margin: 0 0 16px 0;
+        max-width: 300px;
+    }
+
+    .ads1Description,
+    .ads2Description {
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0 0 20px 0;
+        letter-spacing: -0.32px;
+        max-width: 300px;
+    }
+
+    .ads1Tag,
+    .ads2Tag {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.32px;
+        height: 44px;
+        width: 150px;
+        margin: 0 0 0 0;
+    }
+
+    .mainContainerAds {
+        display: grid;
+        grid-template-columns: minmax(min-content, 640px) minmax(min-content, 640px);
+        gap: 32px;
+        margin: 0 0 32px 0;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .mainTitle {
+        font-size: 32px;
+        line-height: 48px;
+        margin: 0;
+    }
+
+    .mainSearch {
+        margin: 0 0 24px 0;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .mainContainerCustomFilters {
+        flex-flow: row nowrap;
+        margin: 0;
+    }
+}

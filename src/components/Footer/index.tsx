@@ -52,7 +52,7 @@ export default function Footer() {
         </div>
       </div>
       <hr className={styles.footerLineDiviser} />
-      <div>
+      <div className={styles.footerContainerDescriptions}>
         <p className={`${styles.footerText} ${styles.footerTextMargin}`}>
           ©2023 Aluguel Carros. Todos os direitos reservados
         </p>

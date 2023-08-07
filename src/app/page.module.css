@@ -22,10 +22,15 @@
     background-color: var(--color04);
     border-radius: 10px;
     max-width: 640px;
+    background-image: url("../../public/assets/bg-ads.svg");
+    background-repeat: repeat round;
+    background-blend-mode: normal;
 }
 
 .ads2 {
     background-color: var(--color05);
+    background-image: url("../../public/assets/bg-ads.svg");
+    background-blend-mode: normal;
 }
 
 .ads1Title,
@@ -201,5 +206,11 @@
     .mainContainerCustomFilters {
         flex-flow: row nowrap;
         margin: 0;
+    }
+
+    .mainCount {
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: -0.28px;
     }
 }

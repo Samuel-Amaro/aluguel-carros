@@ -103,3 +103,31 @@
     padding: 0 20px;
     cursor: pointer;
 }
+
+@media screen and (min-width: 640px) {
+    .cardTitle {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: -0.6px;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .cardPriceValue {
+        font-size: 20px;
+    }
+
+    .cardPriceTime {
+        font-size: 14px;
+    }
+
+    .cardButton {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.32px;
+        height: 44px;
+    }
+}

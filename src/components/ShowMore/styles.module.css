@@ -21,3 +21,12 @@
     cursor: pointer;
     margin: 0 auto;
 }
+
+@media screen and (min-width: 640px) {
+    .button {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.32px;
+        height: 44px;
+    }
+}

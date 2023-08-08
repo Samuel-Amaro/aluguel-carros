@@ -1,7 +1,7 @@
 import type { Config } from "jest";
 
 const config: Config = {
-  verbose: true,
+  verbose: false,
   collectCoverage: true,
   preset: "ts-jest",
   //sobre node 14.x, o provedor de cobertura v8 oferece boa velocidade e um relatório mais ou menos bom
@@ -26,6 +26,8 @@ const config: Config = {
     // Trata as importações de imagens
     // https://jestjs.io/docs/webpack#handling-static-assets
     "^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg)$/i": `<rootDir>/__mocks__/fileMock.js`,
+
+    "@/(.*)": "<rootDir>/src/$1",
 
     // Manipula aliases de módulo
     "^@/components/(.*)$": "<rootDir>/components/$1",

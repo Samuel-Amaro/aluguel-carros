@@ -21,8 +21,11 @@ export default function CustomFilter({
 
   const handleSearchParams = useCallback(
     (title: string, value: string) => {
-      const newPathName = updateSearchParams(title, value.toLowerCase());
-      router.push(newPathName, {scroll: false});
+      const newPathName = updateSearchParams(
+        title.toLowerCase(),
+        value.toLowerCase()
+      );
+      router.push(newPathName, { scroll: false });
     },
     [router]
   );

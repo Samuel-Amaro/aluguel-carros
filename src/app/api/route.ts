@@ -1,4 +1,4 @@
-import { fetcher } from "@/api/cars";
+import { fetchCars } from "@/api/cars";
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
@@ -16,6 +16,6 @@ export async function GET(request: Request) {
     limit: searchParams.get("limit") ? Number(searchParams.get("limit")) : 10,
   };
 
-  const datas = await fetcher(searchParamsValues);
+  const datas = await fetchCars(searchParamsValues);
   return NextResponse.json(datas);
 }

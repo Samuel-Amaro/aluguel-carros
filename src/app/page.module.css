@@ -109,33 +109,12 @@
     margin: 0 0 24px 0;
 }
 
-.mainList {
-    list-style: none;
-    display: flex;
-    flex-flow: row wrap;
-    gap: 24px;
-    justify-content: center;
-    margin: 0 0 32px 0;
-}
-
-.mainListItem {
-    flex: 0 0 100%;
-    max-width: 310px;
-}
-
 .mainCount {
     font-weight: 700;
     font-size: 14px;
     line-height: normal;
     color: var(--color02);
     text-align: right;
-}
-
-.mainContainerLoader {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: space-between;
 }
 
 @media screen and (min-width: 640px) {
@@ -146,7 +125,6 @@
     .ads1,
     .ads2 {
         padding: 24px;
-        /*flex: 0 0 100%;*/
         max-width: none;
         min-height: 100%;
     }
@@ -206,11 +184,5 @@
     .mainContainerCustomFilters {
         flex-flow: row nowrap;
         margin: 0;
-    }
-
-    .mainCount {
-        font-weight: 500;
-        line-height: 21px;
-        letter-spacing: -0.28px;
     }
 }

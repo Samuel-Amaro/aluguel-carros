@@ -1,13 +1,12 @@
-# Aplicativo Web Aluguel de Carros
+# Website Aluguel de Carros
 
 ## Visão Geral
 
 Os usuários devem ser capazes de:
 
-- [] Veja o layout ideal para o aplicativo, dependendo do tamanho da tela do dispositivo
-- [] Veja os estados de foco para todos os elementos interativos na página
-- [] Filtrar veiculos por meio de filtros como fabricantes, modelos, tipo de combustivel e ano
-- [] Receber validações de formulário ao tentar pagar um aluguel
+- [x] Veja o layout ideal para o aplicativo, dependendo do tamanho da tela do dispositivo
+- [x] Veja os estados de foco para todos os elementos interativos na página
+- [x] Filtrar veiculos por meio de filtros como fabricantes, modelos, tipo de combustivel e ano
 
 ## Capturas de Tela
 

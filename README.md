@@ -10,32 +10,35 @@ Os usuários devem ser capazes de:
 
 ## Capturas de Tela
 
+![](./public/assets/result-desktop.png)
+
 ## Links
 
- - [Repositório Projeto]()
- - [Resultado ao vivo]()
+- [Repositório Projeto](https://github.com/Samuel-Amaro/aluguel-carros)
+- [Resultado ao vivo](https://aluguel-carros.vercel.app/)
 
 ## Meu processo
 
 ### Construído com
 
- - Marcação HTML5 semântica
- - Acessibilidade HTML com arias atributos e roles
- - CSS(Flexbox, Grid, Bem Metodologia, Mobile-First, Responsive Web Design, Normalize)
- - Typescript
- - NPM
- - React
-    - hooks
- - Next.js - App Router
- - CSS Modules
- - [API Cars by API-Ninjas](https://rapidapi.com/apininjas/api/cars-by-api-ninjas/) - API datas Cars
- - [Cars Images API](https://www.imagin.studio/car-image-api) - API Images Cars
+- Marcação HTML5 semântica
+- Acessibilidade HTML com arias atributos e roles
+- CSS(Flexbox, Grid, Bem Metodologia, Mobile-First, Responsive Web Design, Normalize)
+- Typescript
+- NPM
+- React
+  - hooks
+- Next.js - App Router
+- CSS Modules
+- SWR Hooks - Busca de dados cliente
+- [API Cars by API-Ninjas](https://rapidapi.com/apininjas/api/cars-by-api-ninjas/) - API datas Cars
+- [Cars Images API](https://www.imagin.studio/car-image-api) - API Images Cars
 
 ## Autor
 
- - [Website](https://samuel-amaro.github.io/portfolio-web/)
+- [Website](https://samuel-amaro.github.io/portfolio-web/)
 
-## Começando 
+## Começando
 
 First, run the development server:
 

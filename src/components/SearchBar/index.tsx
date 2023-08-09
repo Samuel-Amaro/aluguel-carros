@@ -24,7 +24,10 @@ export default function SearchBar() {
       );
       return;
     }
-    updateSearchParams(datasForm.model, datasForm.manufacturer);
+    updateSearchParams(
+      datasForm.model.toLowerCase(),
+      datasForm.manufacturer.toLowerCase()
+    );
   }
 
   function updateSearchParams(model: string, manufacturer: string) {
@@ -46,7 +49,7 @@ export default function SearchBar() {
       window.location.pathname
     }?${searchParams.toString()}`;
 
-    router.push(newPathName);
+    router.push(newPathName, { scroll: false });
   }
 
   return (

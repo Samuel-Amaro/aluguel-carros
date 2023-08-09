@@ -4,26 +4,13 @@ import SearchBar from "@/components/SearchBar";
 import CustomFilter from "@/components/CustomFilter";
 import { fuels, yearsOfProduction } from "@/utils";
 import { Filters } from "@/types";
-import { fetchCars } from "@/api/cars";
-import Card from "@/components/Card";
-import { Suspense } from "react";
-import SkeletonCatalogueCar from "@/components/Skeletons/SkeletonCatalogueCar";
-import ShowMore from "@/components/ShowMore";
+import CatalogueCars from "@/components/CatalogueCars";
 
 export default async function Home({
   searchParams,
 }: {
   searchParams: Filters;
 }) {
-  const datas = await fetchCars({
-    manufacturer: searchParams.manufacturer || "",
-    model: searchParams.model || "",
-    year: searchParams.year || 2022,
-    limit: searchParams.limit || 10,
-    fuel: searchParams.fuel || "",
-  });
-
-  const isDataEmpty = !Array.isArray(datas) || datas.length < 1 || !datas;
 
   return (
     <main className={styles.main}>
@@ -74,33 +61,7 @@ export default async function Home({
           <CustomFilter options={fuels} title="Fuel" />
         </div>
       </div>
-      {!isDataEmpty ? (
-        <section>
-          <Suspense
-            fallback={<SkeletonCatalogueCar limit={searchParams.limit || 10} />}
-          >
-            <ul className={styles.mainList}>
-              {datas?.map((car, index) => (
-                <li key={index} className={styles.mainListItem}>
-                  {<Card datas={car} />}
-                </li>
-              ))}
-            </ul>
-          </Suspense>
-          <div className={styles.mainContainerLoader}>
-            <ShowMore
-              pageNumber={(searchParams.limit || 10) / 10}
-              isNext={(searchParams.limit || 10) > datas.length}
-            />
-            <p className={styles.mainCount}>{datas.length} Carros</p>
-          </div>
-        </section>
-      ) : (
-        <div>
-          <h2>Ops, sem resultados</h2>
-          <p>{datas?.message}</p>
-        </div>
-      )}
+      <CatalogueCars filters={searchParams} />
     </main>
   );
 }

@@ -43,6 +43,19 @@ export default function Modal({
     onClose();
   }
 
+  function handleClickBackdropModal(
+    event: React.MouseEvent<HTMLDialogElement, MouseEvent>
+  ) {
+    if (
+      refDialog.current?.contains(event.target as Node) &&
+      (refDialog.current as HTMLDialogElement) !== event.target
+    ) {
+      return;
+    }
+
+    handleClose();
+  }
+
   useEffect(() => {
     if (refDialog.current) {
       if (isOpen) {
@@ -60,7 +73,12 @@ export default function Modal({
   }, [isOpen]);
 
   return (
-    <dialog ref={refDialog} onClose={handleClose} className={styles.modal}>
+    <dialog
+      ref={refDialog}
+      onClose={handleClose}
+      className={styles.modal}
+      onClick={handleClickBackdropModal}
+    >
       <button
         onClick={() => handleClose()}
         onKeyDown={(e) => {

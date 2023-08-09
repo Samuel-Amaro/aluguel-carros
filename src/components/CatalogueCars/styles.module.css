@@ -1,0 +1,36 @@
+.mainList {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 24px;
+    justify-content: center;
+    margin: 0 0 32px 0;
+}
+
+.mainListItem {
+    flex: 0 0 100%;
+    max-width: 310px;
+}
+
+.mainContainerLoader {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mainCount {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: normal;
+    color: var(--color02);
+    text-align: right;
+}
+
+@media screen and (min-width: 640px) {
+    .mainCount {
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: -0.28px;
+    }
+}

@@ -1,8 +1,6 @@
 "use client";
 
-import { fetchCars, fetcher } from "@/api/cars";
 import { Cars, Filters } from "@/types";
-import { Suspense } from "react";
 import SkeletonCatalogueCar from "../Skeletons/SkeletonCatalogueCar";
 import ShowMore from "../ShowMore";
 import styles from "./styles.module.css";
